@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    
+     <title> This is  javascript Assignment</title></head>
+
+<h1>Pass phraseby Vamshi Merugu </h1>
+<body>
+
+    <h1>Pass phraseby Vamshi Merugu </h1>
+    
+    <form>
+        <label for="pass">Enter the secret phrase</label>
+        <input type ="password" id="pass" name="password"  value="Let me in"> <br>
+    <br>
+        <label for="pwd">Enter a phrase </label>
+        <input type ="text" id="check"  autofocus> <br>
+    <br>
+        <input type="button" onclick="processPhrase()" value="Check the phrase">
+    </form>
+    
+    
+    <p id="result">This text will be replaced </p>
+    
+    <script> 
+     let correct=0,wrong=0;
+    function processPhrase(){
+       var secret = document.getElementById("pass").value
+       var check = document.getElementById("check").value
+       result.style.color = "red"
+       out = document.getElementById("result")
+       if(secret == check)
+       {
+           correct = correct+1;
+           alert("Access allowed")
+           out.innerHTML = "Correct Count : "+correct
+       }
+       else{
+           wrong = wrong+1;
+           alert("Access denied")
+           out.innerHTML = "Wrong Count : "+wrong
+       }
+    
+    
+     }
+    </script>
+    
+    </body>
