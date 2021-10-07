@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>arithmetic</title>
+ </head>
+<body>
+
+<h2>Vamshi Merugu: computes</h2>
+
+<form>
+    <label for="baseelement">Enter a base </label>
+    <input type ="number" id="baseelement" name="baseelement" min=10 max=50 step=2 value=10> <br>
+
+    <label for="exponentelement">Enter an exponent </label>
+    <input type ="number" id="exponentelement" name="exponentelement" autofocus value=2> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+<p id="result"> This text will be replaced</p>
+<script> 
+    function powers() {
+        base = document.getElementById("baseelement").value
+        let result = ""
+        exponent = document.getElementById("exponentelement").value
+        out = document.getElementById("result")
+        for(i =1;i<=exponent;i++)
+        {
+            result=result+Math.pow(base,i)+" ";
+        }
+        out.innerHTML ="Powers of " + base + " are: "+result;
+    }
+</script>
