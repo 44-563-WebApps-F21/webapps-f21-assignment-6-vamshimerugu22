@@ -30,17 +30,29 @@ function processPhrase (){
     console.log("Getting form values")
     value1 = document.getElementById("form1_secret_phrase").value
     value2 = document.getElementById("form1_phrase").value
-    out = document.getElementById("result")
-        if(value1===value2){
-        correct = correct + 1
-        out.innerHTML ="Correct "+correct
+    result.style.color = "red"
+   out = document.getElementById("result")
+   if(wrong<3){
+    if(secret == check)
+    {
+        correct = correct+1;
         alert("Access allowed")
-        }
-        else{
-            wrong = wrong + 1
-            out.innerHTML ="wrong "+wrong
-            alert("Access denied")
-        }
+        out.innerHTML = "Correct Count : "+correct
+    }
+    else{
+        wrong = wrong+1;
+        alert("Access denied")
+        out.innerHTML = "Wrong Count : "+wrong
+    }
+   }
+   else{
+    document.getElementById("button").onclick = access()
+   }
+  
+}
+function access(){
+    alert("Account Locked")
+}
 
 function newImage(){
     switch(usingImage){
