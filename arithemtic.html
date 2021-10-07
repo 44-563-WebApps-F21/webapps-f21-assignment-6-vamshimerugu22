@@ -16,8 +16,21 @@
 
     <input type="button" onclick="powers()" value="Compute">
 </form>
-
 <p id="result"> This text will be replaced</p>
+<form>
+    <input type="radio" id="plus" name="arithmetic" onclick="processRadio()" value="plus" >
+    <label for="plus">+</label></br>
+      
+    <input type="radio" id="minus" name="arithmetic" onclick="processRadio()" value="minus" >
+    <label for="minus">-</label></br>
+      
+    <input type="radio" id="times" name="arithmetic" onclick="processRadio()" value="times" >
+    <label for="times">*</label></br>
+
+    <input type="radio" id="divide" name="arithmetic" onclick="processRadio()" value="divide" >
+    <label for="divide">/</label></br>
+</form>
+<p id="solution">solution</p>
 <script> 
     function powers() {
         base = document.getElementById("baseelement").value
@@ -30,4 +43,30 @@
         }
         out.innerHTML ="Powers of " + base + " are: "+result;
     }
+    function processRadio() {
+    base = Number(document.getElementById("baseelement").value)
+    exponent = Number(document.getElementById("exponentelement").value)
+    plus = document.getElementById("plus").checked
+    minus = document.getElementById("minus").checked
+    times = document.getElementById("times").checked
+    divide = document.getElementById("divide").checked
+    out = document.getElementById("solution")
+    result = 0
+    if(plus){
+        result = base +exponent
+        out.innerHTML = "sum of "+base+" and "+exponent+" is: "+result
+    }
+    else if(minus){
+        result = base-exponent
+        out.innerHTML = "subtraction of "+base+" and "+exponent+" is: "+result
+    }
+    else if(times){
+        result = base*exponent
+        out.innerHTML = "multiplication of "+base+" and "+exponent+" is: "+result
+    }
+    else if(divide){
+        result = base/exponent
+        out.innerHTML = "division of "+base+" and "+exponent+" is: "+result
+    } 
+}
 </script>
