@@ -4,8 +4,7 @@
     
      <title> This is  javascript Assignment</title></head>
 
-<h1>Pass phraseby Vamshi Merugu </h1>
-<body>
+
 
     <h1>Pass phraseby Vamshi Merugu </h1>
     
@@ -18,31 +17,58 @@
     <br>
         <input type="button" onclick="processPhrase()" value="Check the phrase">
     </form>
-    
-    
     <p id="result">This text will be replaced </p>
-    
-    <script> 
-     let correct=0,wrong=0;
-    function processPhrase(){
-       var secret = document.getElementById("pass").value
-       var check = document.getElementById("check").value
-       result.style.color = "red"
-       out = document.getElementById("result")
-       if(secret == check)
-       {
-           correct = correct+1;
-           alert("Access allowed")
-           out.innerHTML = "Correct Count : "+correct
-       }
-       else{
-           wrong = wrong+1;
-           alert("Access denied")
-           out.innerHTML = "Wrong Count : "+wrong
-       }
-    
-    
-     }
-    </script>
-    
-    </body>
+<div class="container">
+    <img id="myImg" style="width: 200px;height: 200px;" alt="goat" onclick="newImage()" src="goat.jpg">
+</div>
+<script> 
+let correct = 0,wrong = 0;
+function processPhrase(){
+   var secret = document.getElementById("pass").value
+   var check = document.getElementById("check").value
+   result.style.color = "red"
+   out = document.getElementById("result")
+   if(wrong<3){
+    if(secret == check)
+    {
+        correct = correct+1;
+        alert("Access allowed")
+        out.innerHTML = "Correct Count : "+correct
+    }
+    else{
+        wrong = wrong+1;
+        alert("Access denied")
+        out.innerHTML = "Wrong Count : "+wrong
+    }
+   }
+   else{
+    document.getElementById("button").onclick = access()
+   }
+  
+}
+function access(){
+    alert("Account Locked")
+}
+let usingImage = 1
+   function newImage(){
+    switch(usingImage){
+        case 1: {
+            document.getElementById("myImg").src = "monkey.jpg";
+            usingImage = usingImage+1
+            break;
+        }
+        case 2:{
+            document.getElementById("myImg").src = "elephant.jpg"; 
+            usingImage = usingImage+1
+            break
+        }
+        case 3:{
+            document.getElementById("myImg").src = "goat.jpg"; 
+            usingImage = usingImage+1
+            break
+        }  
+    }
+}
+</script>
+     </body>
+    </html>
